@@ -6,13 +6,18 @@ import time
 import re
 
 #Set discord webhook URL
-webhook_url = "https://discord.com/api/webhooks/1214978965471756418/Ln6OXfl44444444444rrrrrrrrrtttttttttttt"
+webhook_url = "https://discord.com/api/webhooks/1214978965471756418/Ln6OXflv1MFy2m3Y2r3wkow-abcd-12345678901234567890"
 
-#Set admins SteamIDs
-id_list = ['PostLogin Account: 76561191111111111', 'PostLogin Account: 76561192222222222', 'ServerCheat_Implementation']
+#Set admins SteamIDs, add custom param to find
+id_list = ['PostLogin Account: 76561111111111111', 'PostLogin Account: 76561122222222222',
+    'OnLoadPlayerDataComplete AccountId 76561111111111111',
+    'OnLoadPlayerDataComplete AccountId 76561122222222222',
+    'ServerCheat_Implementation', 'LobbyCheat', 'remote console, exec:']
 
-#Set full path to logs
+#Set full path to servers logs
 log_files = [
+    'C:/moe_cluster/MOE/Saved/Logs/PubDataServer_6010.log',
+    'C:/moe_cluster/MOE/Saved/Logs/LobbyServer_6000.log',
     'C:/moe_cluster/MOE/Saved/Logs/SceneServer_1000.log',
     'C:/moe_cluster/MOE/Saved/Logs/SceneServer_2000.log',
     'C:/moe_cluster/MOE/Saved/Logs/SceneServer_3000.log'
@@ -20,10 +25,13 @@ log_files = [
 
 #Set match the server name and log file
 log_files_dict = {
+    'PubDataServer_6010.log': 'Кластер: Lobby',
+    'LobbyServer_6000.log': 'Кластер: Lobby',
     'SceneServer_1000.log': 'Кластер: PVE1',
     'SceneServer_2000.log': 'Кластер: PVP',
     'SceneServer_3000.log': 'Кластер: PVE2'
 }
+
 #Nothing change more
 
 async def read_log_file(file_path):
